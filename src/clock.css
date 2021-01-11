@@ -1,0 +1,17 @@
+.digital-clock{
+    font-size: 16px;
+    border: 1px solid;
+    display: inline-block;
+    padding: 8px 16px;
+    border-radius: .25rem;
+}
+
+.digital-clock-second{
+    opacity: 1;
+    animation: flash 1s infinite;
+}
+
+@keyframes flash{
+    0% {opacity: 1;}
+    100% {opacity: 0;}
+}

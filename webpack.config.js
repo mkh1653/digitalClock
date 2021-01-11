@@ -6,7 +6,7 @@ module.exports = {
     output: {
         filename: "digital-clock",
         library: "digital-clock",
-        libraryTarget: "ummd",
+        libraryTarget: "umd",
         path: path.resolve(__dirname, "dist"),
     },
     module:{
@@ -14,8 +14,18 @@ module.exports = {
             {
                 test: /\.js$/,
                 exclude: /node_modules/,
-                use: "babel-loader"
+                use: {
+                    loader: "babel-loader",
+                    options: {
+                        presets: ["@babel/preset-env", "@babel/preset-react"]
+                    }
+                }
+            },
+            {
+                test: /\.css$/,
+                use: ["style-loader", "css-loader"]
             }
+
         ]
     }
 }
